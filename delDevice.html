@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title>北秦首页</title>
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
+		<link rel="stylesheet" type="text/css" href="css/index.css" />
+		<link rel="stylesheet" type="text/css" href="css/delDevice.css" />
+	</head>
+
+	<body>
+		<header>
+			<audio id="audio1">
+				<source src="source/huo.mp3" type="audio/mp3"></source>
+			</audio>
+			<audio id="audio2">
+				<source src="source/huo.mp3" type="audio/mp3"></source>
+			</audio>
+			<div class="headerDiv1" style="float:left;position: relative;">
+				<span id="sysDays">系统运行天数：</span><span id="days"></span>
+			</div>
+			<h1 style="float:left;font-size: 30px;">
+			智慧用电安全隐患监管服务平台
+			</h1>
+			<div class="headerDiv2" style="float:left">
+				<span id="timetext" style="position: absolute;bottom: -5px;">
+					系统时间<span id="times"></span>
+				</span>
+				<a id="front" href="/apps/appinterface/index.html#/">
+					后台<br/> 数据管理
+					<br/>
+					<span style="color: rgb(85,251,255);">→</span>
+				</a>
+			</div>
+		</header>
+		<div class="bodyer">
+			<!--<div class="row topRow">
+				<div class="col-sm-3 ">
+					<div id="P1" class="topRowLeft">
+					</div>
+				</div>
+				<div class="col-sm-6" id="P3" style="margin-top: 5px;">11</div>
+				<div class="col-sm-3 ">
+					<div id="P4" class="topRowRight">
+						111
+					</div>
+				</div>
+			</div>-->
+			<div class="row downRow" style="height: 100%;">
+				<!--<div class="col-sm-6 ">
+					<div id="P7">
+						<h4><img src="img/three.png" height="20px"/>设备告警表
+						<span id="eventCount"></span>
+						<button>静音</button></h4>
+						<table class="table">
+							<tr>
+								<th>设备名称</th>
+								<th>设备类型</th>
+								<th>报警时间</th>
+								<th>报警名称</th>
+								<th>报警值</th>
+							</tr>
+							<tbody id="deviceAlaram">
+								<tr>
+								<td>呱呱1号</td>
+								<td>大青蛙</td>
+								<td>2019-8-1</td>
+								<td>大青蛙</td>
+								<td>噔噔噔</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>-->
+				<div class="col-sm-12 ">
+					<div id="P8" style="height: 100%;">
+						<h4><img src="img/three.png" height="20px"/>全部设备信息
+						<span id="guzhangCount"></span>
+						</h4>
+						<table class="table">
+							<tr>
+								<th style="width: 20%;">设备名称</th>
+								<th style="width: 20%;">设备类型</th>
+								<th style="width: 20%;">创建时间</th>
+								<th style="width: 20%;">当前状态</th>
+								<th style="width: 20%;">删除设备</th>
+								<!--<th>报警值</th>-->
+							</tr>
+							<tbody id="breakTable">
+								<tr>
+									<td style="width: 20%;">呱呱1号</td>
+									<td style="width: 20%;">大青蛙</td>
+									<td style="width: 20%;">2019-8-1</td>
+									<td style="width: 20%;">癞蛤蟆</td>
+									<td style="width: 20%;">
+										<button class="btn btn-xs btn-danger" onclick="delBtn('#model_01')">删除</button>
+									</td>
+								</tr>
+								<tr>
+									<td style="width: 20%;">呱呱1号</td>
+									<td style="width: 20%;">大青蛙</td>
+									<td style="width: 20%;">2019-8-1</td>
+									<td style="width: 20%;">癞蛤蟆</td>
+									<td style="width: 20%;">
+										<button class="btn btn-xs btn-danger">删除</button>
+									</td>
+								</tr>
+								<tr>
+									<td style="width: 20%;">呱呱1号</td>
+									<td style="width: 20%;">大青蛙</td>
+									<td style="width: 20%;">2019-8-1</td>
+									<td style="width: 20%;">癞蛤蟆</td>
+									<td style="width: 20%;">
+										<button class="btn btn-xs btn-danger">删除</button>
+									</td>
+								</tr>
+								<tr>
+									<td style="width: 20%;">呱呱1号</td>
+									<td style="width: 20%;">大青蛙</td>
+									<td style="width: 20%;">2019-8-1</td>
+									<td style="width: 20%;">癞蛤蟆</td>
+									<td style="width: 20%;">
+										<button class="btn btn-xs btn-danger">删除</button>
+									</td>
+								</tr>
+								<tr>
+									<td style="width: 20%;">呱呱1号</td>
+									<td style="width: 20%;">大青蛙</td>
+									<td style="width: 20%;">2019-8-1</td>
+									<td style="width: 20%;">癞蛤蟆</td>
+									<td style="width: 20%;">
+										<button class="btn btn-xs btn-danger">删除</button>
+									</td>
+								</tr>
+								<tr>
+									<td style="width: 20%;">呱呱1号</td>
+									<td style="width: 20%;">大青蛙</td>
+									<td style="width: 20%;">2019-8-1</td>
+									<td style="width: 20%;">癞蛤蟆</td>
+									<td style="width: 20%;">
+										<button class="btn btn-xs btn-danger">删除</button>
+									</td>
+								</tr>
+
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="models">
+			
+		</div>
+	</body>
+	<script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
+	<script type="text/javascript" src="js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="js/echarts.min.js"></script>
+	<script type="text/javascript" src="js/china.js"></script>
+	<script type="text/javascript" src="js/moment.min.js"></script>
+	<script src="js/underscore-min.js"></script>
+	<script type="text/javascript" src="js/p1.js"></script>
+	<script type="text/javascript" src="js/p3.js"></script>
+	<script type="text/javascript" src="js/p4.js"></script>
+	<script type="text/javascript" src="js/p7.js"></script>
+	<script type="text/javascript" src="js/p8.js"></script>
+	<script type="text/javascript" src="js/test.js"></script>
+	<script type="text/javascript">
+		var audio1 = document.getElementById("audio1")
+		var audio2 = document.getElementById("audio2")
+		/*	if(sessionStorage.length == 0) {
+				window.location.href = '/apps/bqindex/index.html'
+			}*/
+		var startDate = new Date(2018, 0, 6)
+		var endDate = new Date();
+		var now = endDate - startDate;
+		var nowDate = parseInt(now / (1000 * 60 * 60 * 24));
+		$("#days").html(nowDate)
+		var days = moment().add(1, 'd').format('YYYY-MM-DD');
+
+		function timeFunc() {
+			var times = moment().format('HH:mm');
+			$("#times").html(times)
+		}
+		timeFunc()
+		setInterval(timeFunc, 1000)
+		var thisOwnDevice = [];
+		//echartsP3([{name:'在线设备1',value:[116.355208, 39.891832]}],[{name:'故障设备1',value:[116.355208, 40.891832]}])
+		//p1(); //p1传值给p4he p7
+		//echartsP1(20,15,35);
+		//echartsP4(35,22);
+		//p2();
+		//p3();
+		//p5();
+		//p6();
+		//p7();
+		//p8();
+		//p9();
+		//realTime();
+		/*setInterval(p1, 60000)
+		setInterval(p3, 60000)*/
+	</script>
+	<script>
+		$("#P7 h4 button").click(function() {
+			$(this).css({
+				'box-shadow': '',
+				'border': ''
+			});
+			audio1.pause();
+		})
+		$("#P8 h4 button").click(function() {
+			$(this).css({
+				'box-shadow': '',
+				'border': ''
+			});
+			audio2.pause();
+		})
+
+		function delBtn(id) {
+			var modelText=`
+					<div class="myModel" id="${id}">
+				<div class="delDiv">
+					<h1>确认删除吗</h1>
+					<button class="btn btn-default" onclick="modelHide()">取消</button>
+					<button class="btn btn-danger" onclick="del('${id}')">确认</button>
+				</div>
+			</div>`
+			$("#models").html(modelText); 
+		
+		}
+		function modelHide(){
+			$("#models").html(""); 
+		}
+		function del(id){
+			console.log("删除"+id)
+		}
+	</script>
+
+</html>

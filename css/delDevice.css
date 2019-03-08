@@ -1,0 +1,17 @@
+#models .myModel{
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	background-color: rgba(0,0,0,0.4);
+	top:0;
+}
+#models .myModel .delDiv{
+	height: 300px;
+	width: 500px;
+	position: relative;
+	left: 50%;
+	margin-left: -250px;
+	margin-top: -150px;
+	top: 50%;
+	background-color: white;
+}

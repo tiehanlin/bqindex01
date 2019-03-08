@@ -1,0 +1,259 @@
+body,
+html {
+	height: 100%;
+	margin: 0;
+	padding: 0;
+}
+body {
+	background-image: url(../img/bg.png);
+	background-color: #071739;
+}
+h1 {
+	
+	margin-top: 0 !important;
+	margin-bottom: 0 !important;
+}
+h4{
+	color: #6ff8fa;
+}
+header {
+	text-align: center;
+	position: absolute;
+	top: 10px;
+	left: 50%;
+	margin-left: -780px;
+}
+header div {
+	height: 60px;
+	font-size: 20px;
+	color: white;
+	line-height: 60px;
+}
+#days {
+	color: rgb(85, 251, 255);
+	font-size: 26px;
+	text-shadow: 0px 0px 20px rgb(85, 251, 255);
+}
+#times {
+	color: #D9534F;
+}
+.headerDiv1 {
+	padding-right: 300px;
+	background-image: url(../img/headerLR.png);
+	background-size: 100% 100%;
+}
+.headerDiv2 {
+	padding-left: 400px;
+	position: relative;
+	background-image: url(../img/headerRR.png);
+	background-size: 100% 100%;
+}
+#eventCount,#guzhangCount{
+	font-size: 14px;
+}
+#front {
+	display: block;
+	padding-top: 10px;
+	color: white;
+	text-decoration: none;
+	height: 60px;
+	width: 60px;
+	font-size: 10px;
+	line-height: 14px;
+	background-image: url(../img/button.png);
+	background-size: 100% 100%;
+	position: relative;
+	left: -100px;
+}
+header h1 {
+	color: #f68051;
+	padding: 14px 100px;
+	background-image: url(../img/headerC.png);
+	background-size: 100% 100%;
+}
+.row {
+	margin-left: 0px;
+	margin-right: 0px;
+}
+.bodyer {
+	box-sizing: border-box;
+	height: 100%;
+	padding: 70px 20px 20px 20px;
+}
+.topRow {
+	width: 100%;
+	height: 55%;
+	box-sizing: border-box;
+	padding: 10px 0px;
+}
+.topRow>div,
+.downRow>div {
+	height: 100%;
+}
+.topRowLeft,
+.topRowRight {
+	box-sizing: border-box;
+	height: 100%;
+	padding: 5px 0px;
+}
+.downRow {
+	width: 100%;
+	height: 45%;
+	box-sizing: border-box;
+}
+#P2,#P5,#P6,#P9{
+	overflow-y:scroll ;
+}
+#P1,
+#P2,
+#P4,
+#P5,
+#P6,
+#P7,
+#P8,
+#P9 {
+	border: 3px solid #FFFFFF;
+	border-image-source: url(../img/border9.png);
+	border-image-slice: 2;
+	border-image-repeat: round;
+	background-color: rgba(18, 37, 78, 0.8);
+	padding: 10px;
+}
+#timetext{
+	left: 140px;
+}
+@media only screen and (max-width: 1518px) {
+	header {
+		margin-left: -513px;
+	}
+	header h1 {
+	padding: 10px 85px;
+}
+	.headerDiv1 {
+		padding-right: 46px;
+	}
+	.headerDiv2 {
+		padding-left: 220px;
+	}
+	#front {
+		position: absolute;
+		left: 76%;
+	}
+	#timetext{
+		left: 40px;
+	}
+	#P1,
+	#P2,
+	#P4,
+	#P5,
+	#P6,
+	#P7,
+	#P8,
+	#P9 {
+		padding: 0;
+	}
+	#P1,
+	#P4 {
+		height: 100%;
+	}
+	#P5,
+	#P2 {
+		height: 60%;
+	}
+}
+
+#P3 {
+	padding: 20px 20px 0px 20px;
+	background: url(../img/map.png) !important;
+	background-size: 100% 100%!important;
+	background-repeat: no-repeat !important;
+}
+#P6,
+#P7,
+#P8,
+#P9 {
+	height: 100%;
+}
+#P7 h4,
+#P8 h4 {
+	margin-top: 5px !important;
+	color: #6ff8fa;
+	font-size: 20px;
+	position: relative;
+}
+#P7 h4 button,
+#P8 h4 button {
+	font-size: 14px;
+	border: #5fc1ff 1px solid;
+	padding: 3px 6px;
+	box-shadow: 0px 0px 10px #5fc1ff inset;
+	border-radius: 10px;
+	background-color: transparent;
+	position: absolute;
+	right: 0;
+	color: white;
+}
+#P7,
+#P8 {
+	overflow-y: scroll;
+}
+table tr th {
+	border: rgba(64, 113, 255, 0.2) 1px solid !important;
+	font-size: 14px;
+	text-align: center;
+	color: #D43F3A;
+	padding: 5px 0 !important;
+}
+table tbody {
+	border: rgba(64, 113, 255, 0.2) 1px solid;
+}
+table tbody tr td {
+	width: 20%;
+	font-size: 12px;
+	color: white;
+	text-align: center;
+	border: rgba(64, 113, 255, 0.2) 1px solid;
+}
+ ::-webkit-scrollbar {
+	/* 滚动条整体部分 */
+	width: 10px;
+	margin-right: 2px
+}
+
+ ::-webkit-scrollbar-button {
+	/* 滚动条两端的按钮 */
+	width: 10px;
+	background-color: rgba(38,184,255,0.6);
+}
+
+ ::-webkit-scrollbar:horizontal {
+	height: 10px;
+	margin-bottom: 2px
+}
+
+ ::-webkit-scrollbar-track {
+	/* 外层轨道 */
+	border-radius: 0px;
+}
+
+ ::-webkit-scrollbar-track-piece {
+	/*内层轨道，滚动条中间部分 */
+	background-color: rgba(38,184,255,0.2);
+	border-radius: 0px;
+}
+
+ ::-webkit-scrollbar-thumb {
+	/* 滑块 */
+	width: 6px;
+	background: #26b8ff;
+}
+
+ ::-webkit-scrollbar-corner {
+	/* 边角 */
+	width: 6px;
+}
+
+ ::-webkit-scrollbar-thumb:hover {
+	/* 鼠标移入滑块 */
+	background-color: rgba(38,184,255,0.8);
+}

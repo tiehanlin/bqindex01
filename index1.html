@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8">
+		<title>Document</title>
+		<link rel="stylesheet" href="css/bootstrap.min.css">
+		<link rel="stylesheet" href="css/login.css" />
+	</head>
+
+	<body>
+		<img src="img/ele.png" style="position: absolute;bottom: 30px;right: 30px;" alt="" />
+		<div class="container">
+			<div class="row">
+				<div class="col-xs-6">
+					<div class="left">
+						<img src="img/logo.png" class="logo" alt="" />
+						<img src="img/earth.png" width="100%" class="earth" />
+						<p>智慧用电安全隐患监管服务平台
+
+							<img src="img/textborder.png" width="460px" /></p>
+						<img src="img/computer.png" class="computer" />
+					</div>
+				</div>
+				<div class="col-xs-1"></div>
+				<div class="col-xs-5">
+					<div class="login">
+						<div class="nameDiv">
+							<img src="img/name.png" alt="" />
+							<input type="text" class="name" id="name" placeholder="用户名" />
+						</div>
+						<div class="passDiv">
+							<img src="img/pass.png" alt="" />
+							<input type="password" class="pass" id="pass" placeholder="密码" />
+						</div>
+						<div class="subDiv">
+							<button type="button" class="button btn btn-lg" id="login">登录</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script src="js/jquery-1.11.1.min.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+		<script src="js/UnicodeAnsi.js"></script>
+		<script>
+			if(sessionStorage.length != 0)
+			{
+				window.location.href = '/apps/bqindex/real.html'
+			}
+			var keyStr = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=";
+			$("#login").click(function() {
+				var name = $("#name").val() + ':';
+				var pass = $("#pass").val();
+				var de = encode64(strUnicode2Ansi(name + pass));
+				login(de);
+			})
+	
+			function encode64(input) {
+				var output = "";
+				var chr1, chr2, chr3 = "";
+				var enc1, enc2, enc3, enc4 = "";
+				var i = 0;
+
+				do {
+					chr1 = input.charCodeAt(i++);
+					chr2 = input.charCodeAt(i++);
+					chr3 = input.charCodeAt(i++);
+
+					enc1 = chr1 >> 2;
+					enc2 = ((chr1 & 3) << 4) | (chr2 >> 4);
+					enc3 = ((chr2 & 15) << 2) | (chr3 >> 6);
+					enc4 = chr3 & 63;
+
+					if(isNaN(chr2)) {
+						enc3 = enc4 = 64;
+					} else if(isNaN(chr3)) {
+						enc4 = 64;
+					}
+
+					output = output +
+						keyStr.charAt(enc1) +
+						keyStr.charAt(enc2) +
+						keyStr.charAt(enc3) +
+						keyStr.charAt(enc4);
+					chr1 = chr2 = chr3 = "";
+					enc1 = enc2 = enc3 = enc4 = "";
+				} while (i < input.length);
+
+				return output;
+			}
+			$('#pass').bind('keypress', function(event) {
+				if(event.keyCode == "13") {
+					var name = $("#name").val() + ':';
+					var pass = $("#pass").val();
+					var de = encode64(strUnicode2Ansi(name + pass));
+					login(de);
+				}
+			});
+			function login(de) {
+				$.ajax({
+					type: "get",
+					headers: {
+						UseXBasic: true,
+						Authorization: 'Basic ' + de
+					},
+					//url: "https://tiehanlin.quarkioe.cn/
+					url: "/user/currentUser?auth",
+					success: function(data) {
+						sessionStorage = {}
+						sessionStorage._tcy8 = de
+						window.location.href = '/apps/bqindex/real.html'
+
+					},
+					error: function(data) {
+						alert('用户名或密码错误，请重新输入')
+					}
+				});
+			}
+		</script>
+	</body>
+
+</html>
